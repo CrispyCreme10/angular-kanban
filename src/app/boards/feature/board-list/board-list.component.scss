@@ -1,0 +1,46 @@
+$recordHeight: 35px;
+
+.record {
+  display: flex;
+  align-items: center;
+  height: $recordHeight;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.header {
+  
+}
+
+.add-line {
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  
+}
+
+.add-plus {
+  width: 50px;
+  text-align: center;
+}
+
+hr {
+  width: 100%;
+}
+
+.temp-board {
+  max-height: 0;
+  border: 1px dashed black;
+  opacity: 0;
+  transition: opacity 300ms ease, max-height 300ms ease;
+}
+
+.temp-board.active {
+  max-height: $recordHeight;
+  opacity: 1;
+}
+
+.board {
+  cursor: pointer;
+}

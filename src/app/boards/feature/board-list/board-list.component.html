@@ -1,1 +1,20 @@
-<p>board-list works!</p>
+<div style="padding: 30px;">
+  <div class="header record">
+    <span>Name</span>
+  </div>
+  <div style="padding: 10px; display: flex; flex-direction: column; gap: 15px;">
+    <div class="add-line" (click)="toggleTempBoard()">
+      <hr>
+      <span class="add-plus">{{isTempBoardShowing ? '-' : '+'}}</span>
+      <hr>
+    </div>
+    <div class="temp-board record" [class.active]="isTempBoardShowing">
+      <input #tempBoardName type="text" placeholder="Board name" (blur)="tempBoardNameBlur($event)"/>
+    </div>
+    <div *ngFor="let board of (boards$ | async); index as boardIndex" 
+      class="board record" 
+      (click)="openBoard(boardIndex)">
+      <span>{{board?.name}}</span>
+    </div>
+  </div>
+</div>
